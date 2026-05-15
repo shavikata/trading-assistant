@@ -60,15 +60,6 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
     price_rows_count INTEGER DEFAULT 0,
     signals_count INTEGER DEFAULT 0
 );
-
-CREATE INDEX IF NOT EXISTS idx_price_data_ticker_date
-ON price_data(ticker, date);
-
-CREATE INDEX IF NOT EXISTS idx_signals_date
-ON signals(signal_date);
-
-CREATE INDEX IF NOT EXISTS idx_signals_ticker
-ON signals(ticker);
 """
 
 

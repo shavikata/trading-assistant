@@ -29,7 +29,7 @@ def get_database_summary(connection: sqlite3.Connection) -> dict[str, int]:
 
 def upsert_universe_rows(
     connection: sqlite3.Connection,
-    rows: Iterable[Mapping],
+    rows: Iterable[Mapping[str, object]],
 ) -> int:
     rows = list(rows)
 
