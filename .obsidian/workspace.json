@@ -185,6 +185,8 @@
   },
   "active": "7eca275e7d62a392",
   "lastOpenFiles": [
+    "docs/ai-context.md",
+    "docs/progress-log.md",
     "data/market_data.db-wal",
     "scripts/__pycache__/inspect_db.cpython-314.pyc",
     "scripts/__pycache__/__init__.cpython-314.pyc",
@@ -194,7 +196,6 @@
     "scripts/scripts/__init__.py",
     "scripts/scripts",
     "tests/__pycache__/test_signal_engine.cpython-314-pytest-9.0.3.pyc",
-    "tests/__pycache__/test_indicators.cpython-314-pytest-9.0.3.pyc",
-    "tests/__pycache__/test_database.cpython-314-pytest-9.0.3.pyc"
+    "tests/__pycache__/test_indicators.cpython-314-pytest-9.0.3.pyc"
   ]
 }
