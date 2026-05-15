@@ -29,8 +29,8 @@ Status legend:
 ### Core MVP
 
 - [x] Working Python project architecture — DONE: main folders exist.
-- [ ] Clean modular codebase — PARTIAL: config/storage are modular; market scan logic still needs to be moved into modules.
-- [ ] SQLite database initialized — PARTIAL: init script exists; mark DONE after `python scripts/init_db.py` runs successfully.
+- [ ] Clean modular codebase — PARTIAL: config/storage are modular; market data, indicators and signal logic still need modules.
+- [x] SQLite database initialized — DONE.
 - [ ] Small-cap ticker universe loader — TODO.
 - [ ] yfinance market data pipeline — TODO.
 - [ ] Technical indicators — TODO.
@@ -43,7 +43,7 @@ Status legend:
 - [ ] Backtest engine — TODO.
 - [ ] AI prompt builder — TODO.
 - [ ] Basic Telegram-ready signal format — TODO.
-- [ ] GitHub repository updated — TODO: mark DONE after this commit is pushed.
+- [x] GitHub repository updated — DONE.
 - [x] Obsidian documentation updated — DONE: MVP plan is formatted and tracked.
 
 ### Business MVP
@@ -96,3 +96,78 @@ AI Analysis
 Telegram Bot / Dashboard
 ↓
 Performance Tracking
+```
+
+---
+
+## 5. Immediate Next Steps
+
+### Phase 1 — Repo Health
+
+Goal: make the project runnable and automatically checked.
+
+Tasks:
+
+- [x] Format core Python files properly.
+- [x] Add requirements for pytest and ruff.
+- [x] Add SQLite initialization script.
+- [x] Add database inspection script.
+- [x] Add first database tests.
+- [x] Add GitHub Actions CI.
+- [x] Run local checks successfully.
+- [x] Push changes to GitHub.
+- [x] Confirm GitHub Actions passes.
+
+### Phase 2 — Market Data Pipeline
+
+Goal: collect and store stock price data.
+
+Tasks:
+
+- [ ] Create static MVP watchlist.
+- [ ] Implement yfinance data downloader.
+- [ ] Store historical OHLCV data in SQLite.
+- [ ] Add tests for data formatting.
+
+### Phase 3 — Indicators
+
+Goal: calculate technical indicators.
+
+Tasks:
+
+- [ ] Implement RSI.
+- [ ] Implement ATR.
+- [ ] Implement volume spike ratio.
+- [ ] Implement 52-week high distance.
+- [ ] Add tests for each indicator.
+
+### Phase 4 — Signal Engine
+
+Goal: detect early stock setups.
+
+Tasks:
+
+- [ ] Define signal conditions.
+- [ ] Generate signal score.
+- [ ] Store generated signals in SQLite.
+- [ ] Add tests for signal logic.
+
+### Phase 5 — Backtest and AI Output
+
+Goal: explain signals with historical context.
+
+Tasks:
+
+- [ ] Backtest similar historical setups.
+- [ ] Generate AI-readable explanation prompt.
+- [ ] Prepare Telegram-ready message format.
+
+---
+
+## 6. Current Rule
+
+Do not add Telegram, payments, dashboard, or AI automation until the core pipeline works:
+
+```text
+universe -> market data -> indicators -> signal -> SQLite -> basic report
+```
