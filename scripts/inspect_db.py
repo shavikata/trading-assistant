@@ -1,9 +1,3 @@
-from pathlib import Path
-import sys
-
-ROOT_DIR = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT_DIR))
-
 from app.config.logging_config import setup_logging
 from app.storage.database import get_connection
 from app.storage.repositories import get_database_summary

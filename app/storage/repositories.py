@@ -2,15 +2,16 @@ import sqlite3
 from typing import Iterable, Mapping
 
 
-def count_rows(connection: sqlite3.Connection, table_name: str) -> int:
-    allowed_tables = {
-        "stock_universe",
-        "price_data",
-        "signals",
-        "pipeline_runs",
-    }
+ALLOWED_TABLES = {
+    "stock_universe",
+    "price_data",
+    "signals",
+    "pipeline_runs",
+}
 
-    if table_name not in allowed_tables:
+
+def count_rows(connection: sqlite3.Connection, table_name: str) -> int:
+    if table_name not in ALLOWED_TABLES:
         raise ValueError(f"Table not allowed: {table_name}")
 
     row = connection.execute(f"SELECT COUNT(*) AS total FROM {table_name}").fetchone()

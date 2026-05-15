@@ -1,6 +1,5 @@
 import sqlite3
 
-
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS stock_universe (
     ticker TEXT PRIMARY KEY,
@@ -31,28 +30,22 @@ CREATE TABLE IF NOT EXISTS signals (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     ticker TEXT NOT NULL,
     signal_date TEXT NOT NULL,
-
     close_price REAL NOT NULL,
     volume INTEGER,
     avg_volume_20 REAL,
     volume_spike_ratio REAL,
-
     atr_14 REAL,
     atr_14_prev REAL,
     atr_compression_ratio REAL,
-
     rsi_14 REAL,
     high_52w REAL,
     distance_from_52w_high_pct REAL,
-
     entry_price REAL,
     stop_loss REAL,
     target_1 REAL,
     target_2 REAL,
-
     status TEXT DEFAULT 'open',
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-
     UNIQUE(ticker, signal_date),
     FOREIGN KEY (ticker) REFERENCES stock_universe(ticker)
 );

@@ -5,3 +5,5 @@ requests
 tenacity
 tqdm
 python-dotenv
+pytest
+ruff

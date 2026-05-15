@@ -18,38 +18,42 @@ The product is not a financial advisor. It provides transparent, data-backed sto
 
 ---
 
-## 2. End-of-Period Target
+## 2. Current Project Status
 
-At the end of the period, we want to have:
+Status legend:
+
+- DONE = completed
+- PARTIAL = started but not complete
+- TODO = not started yet
 
 ### Core MVP
 
-- [ ] Working Python project architecture
-- [ ] Clean modular codebase
-- [ ] SQLite database initialized
-- [ ] Small-cap ticker universe loader
-- [ ] yfinance market data pipeline
-- [ ] Technical indicators:
-  - [ ] RSI
-  - [ ] ATR
-  - [ ] Volume spike
-  - [ ] 52-week high distance
-- [ ] Signal engine
-- [ ] Stored signals in database
-- [ ] Backtest engine
-- [ ] AI prompt builder
-- [ ] Basic Telegram-ready signal format
-- [ ] GitHub repository updated
-- [ ] Obsidian documentation updated
+- [x] Working Python project architecture — DONE: main folders exist.
+- [ ] Clean modular codebase — PARTIAL: config/storage are modular; market scan logic still needs to be moved into modules.
+- [ ] SQLite database initialized — PARTIAL: init script exists; mark DONE after `python scripts/init_db.py` runs successfully.
+- [ ] Small-cap ticker universe loader — TODO.
+- [ ] yfinance market data pipeline — TODO.
+- [ ] Technical indicators — TODO.
+  - [ ] RSI — TODO.
+  - [ ] ATR — TODO.
+  - [ ] Volume spike — TODO.
+  - [ ] 52-week high distance — TODO.
+- [ ] Signal engine — TODO.
+- [ ] Stored signals in database — TODO.
+- [ ] Backtest engine — TODO.
+- [ ] AI prompt builder — TODO.
+- [ ] Basic Telegram-ready signal format — TODO.
+- [ ] GitHub repository updated — TODO: mark DONE after this commit is pushed.
+- [x] Obsidian documentation updated — DONE: MVP plan is formatted and tracked.
 
 ### Business MVP
 
-- [ ] Clear product positioning
-- [ ] Subscription model defined
-- [ ] Disclaimer policy defined
-- [ ] Signal transparency logic defined
-- [ ] Telegram distribution plan prepared
-- [ ] Payment integration plan prepared
+- [ ] Clear product positioning — PARTIAL: basic positioning is written.
+- [ ] Subscription model defined — TODO.
+- [ ] Disclaimer policy defined — PARTIAL: basic non-financial-advisor disclaimer exists.
+- [ ] Signal transparency logic defined — TODO.
+- [ ] Telegram distribution plan prepared — TODO.
+- [ ] Payment integration plan prepared — TODO.
 
 ---
 
@@ -67,7 +71,7 @@ The product combines:
 
 Main promise:
 
-> We do not promise guaranteed returns.  
+> We do not promise guaranteed returns.
 > We provide transparent, data-backed signal analysis with clear risk levels.
 
 ---
@@ -76,19 +80,19 @@ Main promise:
 
 ```text
 Ticker Universe
-      ↓
+↓
 Market Data Ingestion
-      ↓
+↓
 Indicators
-      ↓
+↓
 Signal Engine
-      ↓
+↓
 SQLite Storage
-      ↓
+↓
 Backtest Engine
-      ↓
+↓
 AI Analysis
-      ↓
+↓
 Telegram Bot / Dashboard
-      ↓
+↓
 Performance Tracking
