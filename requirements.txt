@@ -1,2 +1,7 @@
 yfinance
 pandas
+numpy
+requests
+tenacity
+tqdm
+python-dotenv

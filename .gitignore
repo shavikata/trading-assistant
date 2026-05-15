@@ -2,3 +2,6 @@
 __pycache__/
 *.csv
 *.db
+.venv/
+logs/*.log
+data/*.db
