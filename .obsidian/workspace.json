@@ -183,8 +183,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "7eca275e7d62a392",
+  "active": "dd68ff03b4980ba1",
   "lastOpenFiles": [
+    "data/market_data.db-wal",
+    "docs/progress-log.md",
+    "docs/obsidian-test.md",
+    "docs/ai-context.md",
+    "docs/mvp-execution-plan.md",
     "tests/__pycache__/__init__.cpython-314.pyc",
     "__pycache__/main.cpython-314.pyc",
     "__pycache__",
@@ -194,9 +199,6 @@
     "app/signals/__pycache__/signal_models.cpython-314.pyc",
     "app/signals/__pycache__/signal_engine.cpython-314.pyc",
     "app/signals/__pycache__",
-    "app/payments/__pycache__/__init__.cpython-314.pyc",
-    "app/payments/__pycache__/nowpayments.cpython-314.pyc",
-    "docs/ai-context.md",
-    "docs/progress-log.md"
+    "app/payments/__pycache__/__init__.cpython-314.pyc"
   ]
 }

@@ -11,8 +11,8 @@ def main() -> None:
     print("\nTrading Assistant")
     print("=================")
     print("Database is ready.\n")
-
     print("Current database summary:")
+
     for table_name, total_rows in summary.items():
         print(f"- {table_name}: {total_rows}")
 
