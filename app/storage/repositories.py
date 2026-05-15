@@ -102,3 +102,59 @@ def insert_pipeline_run(
     connection.commit()
 
     return int(cursor.lastrowid)
+def get_active_tickers(connection: sqlite3.Connection) -> list[str]:
+    rows = connection.execute(
+        """
+        SELECT ticker
+        FROM stock_universe
+        WHERE is_active = 1
+        ORDER BY ticker;
+        """
+    ).fetchall()
+
+    return [str(row["ticker"]) for row in rows]
+
+
+def upsert_price_rows(
+    connection: sqlite3.Connection,
+    rows: Iterable[Mapping[str, object]],
+) -> int:
+    rows = list(rows)
+
+    if not rows:
+        return 0
+
+    sql = """
+    INSERT INTO price_data (
+        ticker,
+        date,
+        open,
+        high,
+        low,
+        close,
+        adj_close,
+        volume
+    )
+    VALUES (
+        :ticker,
+        :date,
+        :open,
+        :high,
+        :low,
+        :close,
+        :adj_close,
+        :volume
+    )
+    ON CONFLICT(ticker, date) DO UPDATE SET
+        open = excluded.open,
+        high = excluded.high,
+        low = excluded.low,
+        close = excluded.close,
+        adj_close = excluded.adj_close,
+        volume = excluded.volume;
+    """
+
+    connection.executemany(sql, rows)
+    connection.commit()
+
+    return len(rows)

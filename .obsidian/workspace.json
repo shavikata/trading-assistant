@@ -185,6 +185,9 @@
   },
   "active": "dd68ff03b4980ba1",
   "lastOpenFiles": [
+    "tests/__pycache__/test_market_data.cpython-314-pytest-9.0.3.pyc",
+    "tests/test_market_data.py",
+    "scripts/download_market_data.py",
     "data/market_data.db-wal",
     "docs/progress-log.md",
     "docs/obsidian-test.md",
@@ -196,9 +199,6 @@
     "scripts/__pycache__/run_daily_signals.cpython-314.pyc",
     "scripts/__pycache__/refresh_universe.cpython-314.pyc",
     "app/signals/__pycache__/__init__.cpython-314.pyc",
-    "app/signals/__pycache__/signal_models.cpython-314.pyc",
-    "app/signals/__pycache__/signal_engine.cpython-314.pyc",
-    "app/signals/__pycache__",
-    "app/payments/__pycache__/__init__.cpython-314.pyc"
+    "app/signals/__pycache__/signal_models.cpython-314.pyc"
   ]
 }
