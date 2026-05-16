@@ -18,4 +18,6 @@ __pycache__/
 !.env.example
 logs/
 *.db
-data/*.db
+data/*.dbdata/reports/
+
+data/reports/

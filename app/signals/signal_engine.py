@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pandas as pd
 
 from app.config.settings import settings
@@ -17,7 +19,12 @@ def generate_signal_for_ticker(
         return None
 
     frame["rsi_14"] = calculate_rsi(frame["close"], period=14)
-    frame["atr_14"] = calculate_atr(frame["high"], frame["low"], frame["close"], period=14)
+    frame["atr_14"] = calculate_atr(
+        frame["high"],
+        frame["low"],
+        frame["close"],
+        period=14,
+    )
     frame["avg_volume_20"] = calculate_avg_volume(frame["volume"], period=20)
     frame["volume_spike_ratio"] = calculate_volume_spike_ratio(frame["volume"], period=20)
 
@@ -37,16 +44,15 @@ def generate_signal_for_ticker(
     distance_from_high = _safe_float(latest["distance_from_52w_high_pct"])
     atr_14 = _safe_float(latest["atr_14"])
 
-    if any(
-        value is None
-        for value in [
-            volume_spike_ratio,
-            atr_compression_ratio,
-            rsi_14,
-            distance_from_high,
-            atr_14,
-        ]
-    ):
+    required_values = [
+        volume_spike_ratio,
+        atr_compression_ratio,
+        rsi_14,
+        distance_from_high,
+        atr_14,
+    ]
+
+    if any(value is None for value in required_values):
         return None
 
     score = 0
@@ -128,10 +134,12 @@ def _build_frame(price_rows: list[object]) -> pd.DataFrame:
 def _safe_float(value: object, digits: int = 4) -> float | None:
     if pd.isna(value):
         return None
+
     return round(float(value), digits)
 
 
 def _safe_int(value: object) -> int | None:
     if pd.isna(value):
         return None
+
     return int(value)
