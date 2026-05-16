@@ -32,6 +32,7 @@ class Settings:
     rsi_max: float = float(os.getenv("RSI_MAX", "50"))
     atr_compression_lookback: int = int(os.getenv("ATR_COMPRESSION_LOOKBACK", "5"))
     min_avg_dollar_volume: float = float(os.getenv("MIN_AVG_DOLLAR_VOLUME", "1000000"))
-
+    telegram_bot_token: str = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    telegram_chat_id: str = os.getenv("TELEGRAM_CHAT_ID", "")   
 
 settings = Settings()
