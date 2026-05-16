@@ -9,9 +9,8 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from app.storage.database import get_connection
-from app.storage.schema import create_schema
-
+from app.storage.database import get_connection  # noqa: E402
+from app.storage.schema import create_schema  # noqa: E402
 
 st.set_page_config(
     page_title="Trading Assistant MVP",
