@@ -185,10 +185,12 @@
   },
   "active": "dd68ff03b4980ba1",
   "lastOpenFiles": [
+    "data/market_data.db-wal",
+    "data/market_data.db-shm",
+    "scripts/__pycache__/download_market_data.cpython-314.pyc",
     "tests/__pycache__/test_market_data.cpython-314-pytest-9.0.3.pyc",
     "tests/test_market_data.py",
     "scripts/download_market_data.py",
-    "data/market_data.db-wal",
     "docs/progress-log.md",
     "docs/obsidian-test.md",
     "docs/ai-context.md",
@@ -197,8 +199,6 @@
     "__pycache__/main.cpython-314.pyc",
     "__pycache__",
     "scripts/__pycache__/run_daily_signals.cpython-314.pyc",
-    "scripts/__pycache__/refresh_universe.cpython-314.pyc",
-    "app/signals/__pycache__/__init__.cpython-314.pyc",
-    "app/signals/__pycache__/signal_models.cpython-314.pyc"
+    "scripts/__pycache__/refresh_universe.cpython-314.pyc"
   ]
 }

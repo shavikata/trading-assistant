@@ -8,3 +8,14 @@ __pycache__/
 *.db
 logs/*.log
 data/*.db
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+logs/
+*.db
+data/*.db
