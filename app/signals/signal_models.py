@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
 
 
@@ -42,4 +44,6 @@ class SignalCandidate:
             "target_1": self.target_1,
             "target_2": self.target_2,
             "status": self.status,
+            "score": self.score,
+            "reason": self.reason,
         }

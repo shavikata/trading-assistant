@@ -44,6 +44,8 @@ CREATE TABLE IF NOT EXISTS signals (
     stop_loss REAL,
     target_1 REAL,
     target_2 REAL,
+    score INTEGER DEFAULT 0,
+    reason TEXT,
     status TEXT DEFAULT 'open',
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(ticker, signal_date),
@@ -65,4 +67,35 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
 
 def create_schema(connection: sqlite3.Connection) -> None:
     connection.executescript(SCHEMA_SQL)
+
+    _ensure_column(
+        connection=connection,
+        table_name="signals",
+        column_name="score",
+        column_definition="INTEGER DEFAULT 0",
+    )
+    _ensure_column(
+        connection=connection,
+        table_name="signals",
+        column_name="reason",
+        column_definition="TEXT",
+    )
+
     connection.commit()
+
+
+def _ensure_column(
+    connection: sqlite3.Connection,
+    table_name: str,
+    column_name: str,
+    column_definition: str,
+) -> None:
+    existing_columns = {
+        str(row[1])
+        for row in connection.execute(f"PRAGMA table_info({table_name});").fetchall()
+    }
+
+    if column_name not in existing_columns:
+        connection.execute(
+            f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_definition};"
+        )

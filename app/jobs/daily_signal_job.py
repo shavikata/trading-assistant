@@ -52,6 +52,8 @@ def run_daily_signal_job() -> dict[str, int]:
                     stop_loss,
                     target_1,
                     target_2,
+                    score,
+                    reason,
                     status
                 )
                 VALUES (
@@ -71,6 +73,8 @@ def run_daily_signal_job() -> dict[str, int]:
                     :stop_loss,
                     :target_1,
                     :target_2,
+                    :score,
+                    :reason,
                     :status
                 )
                 ON CONFLICT(ticker, signal_date) DO UPDATE SET
@@ -88,6 +92,8 @@ def run_daily_signal_job() -> dict[str, int]:
                     stop_loss = excluded.stop_loss,
                     target_1 = excluded.target_1,
                     target_2 = excluded.target_2,
+                    score = excluded.score,
+                    reason = excluded.reason,
                     status = excluded.status;
                 """,
                 signal.to_signal_table_row(),
